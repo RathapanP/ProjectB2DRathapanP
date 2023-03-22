@@ -1,0 +1,78 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="Project.css" />
+	<title>โปรแกรมหารเงินค่าทำโครงงานกลุ่ม by RathapanP</title>
+</head>
+<body>
+	<link rel="stylesheet" type="text/css" href="Project.css" />
+	<script src="Project.js"></script>
+	<h1>โปรแกรมหารเงินค่าโครงงานกลุ่ม:</h1>
+
+	<!-- ชุดคำนวณหารเงิน -->
+	<form>
+		<label>รายการซื้อของ</label><br>
+
+		<label for="itemnamewho">ชื่อคนซื้อ:</label>
+		<input type="text" id="itemnamewho" name="itemnamewho"><br>
+
+		<label for="itemname">ชื่อของ:</label>
+		<input type="text" id="itemname" name="itemname"><br>
+
+		<label for="itemprice">ราคาของ:</label>
+		<input type="number" min="0" id="itemprice" name="itemprice"><br>
+
+		<button type="button" onclick="addItem()">กดเพิ่มของ</button><br><br>
+
+		<label for="itemlist">รายการของทั้งหมด</label>
+		<ul id="itemlist"></ul>
+
+		<label for="total">รวมเป็น:</label>
+		<input type="number" id="total" name="total" readonly><br><br>
+		
+		<label>รายการสมาชิก</label><br>
+
+		<label for="members">จำนวนสมาชิก:</label>
+		<input type="number" min="0" id="members" name="members"><br>
+
+		<label for="pricepermember">ราคาต่อสมาชิก:</label>
+		<input type="number" id="pricepermember" name="pricepermember" readonly><br>
+
+		<button type="button" onclick="calculate()">กดคำนวณ</button><br>
+
+	</form>
+	<!-- ชุดคำนวณหารเงิน -->
+
+	<!-- Embed Audio from Youtube -->
+	<div id="player"></div>
+    <script src="https://unpkg.com/@ampproject/worker-dom@1.4.1/dist/amp-inabox.js"></script>
+    <script src="https://www.youtube.com/player_api"></script>
+    <script src="https://unpkg.com/@ampproject/worker-dom@1.4.1/dist/amp-youtube.js"></script>
+    <script>
+      const player = new YT.Player('player', {
+        height: '0',
+        width: '0',
+        videoId: 'fI6IX1oULQk',
+        playerVars: {
+          autoplay: 1,
+          controls: 0,
+          showinfo: 0,
+          rel: 0,
+          iv_load_policy: 3,
+          cc_load_policy: 0,
+          fs: 0,
+          playsinline: 1,
+          modestbranding: 1
+        },
+        events: {
+          'onReady': onPlayerReady
+        }
+      });
+
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+    </script>
+	<!-- Embed Audio from Youtube -->
+	
+</body>
+</html>
